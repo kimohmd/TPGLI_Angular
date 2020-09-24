@@ -1,0 +1,17 @@
+<!-- <input [(ngModel)]="id" >
+<input [(ngModel)]="id" readonly>
+<p>{{id}}</p> -->
+
+<div> <span>Chercher un pokémon : </span> <input [(ngModel)]="filtre" > <span> <button (click)="onClick($event)">Go!</button> </span>
+    <!-- <p>{{filtre }}</p> -->
+</div>
+
+<label for="pokemon-select">liste des pokémons:</label>
+
+<select [(ngModel)]="selectedPokemon"  name="pokémons" id="pokémon-select">
+
+    <option *ngFor="let p of pokemonList | filterPokemonPipe : 'nom' : filtre" [ngValue]="p"> {{p.id}} - {{p.nom}}</option>
+</select>
+
+<p><span>Pokémon choisi: </span><b>{{selectedPokemon.id}} - {{selectedPokemon.nom}}</b></p>
+
