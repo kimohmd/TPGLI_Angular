@@ -10,8 +10,13 @@
 
 <select [(ngModel)]="selectedPokemon"  name="pokémons" id="pokémon-select">
 
-    <option *ngFor="let p of pokemonList | filterPokemonPipe : 'nom' : filtre" [ngValue]="p"> {{p.id}} - {{p.nom}}</option>
+    <option [ngValue]="p"
+    *ngFor="let p of pokemonList | filterPokemonPipe : 'nom' : filtre" >{{p.nom}}</option>
 </select>
 
-<p><span>Pokémon choisi: </span><b>{{selectedPokemon.id}} - {{selectedPokemon.nom}}</b></p>
+
+
+<div *ngIf="pokemonDetail">
+    <app-display-pokemon-component [detail] = "pokemonDetail"></app-display-pokemon-component> 
+ </div>  
 

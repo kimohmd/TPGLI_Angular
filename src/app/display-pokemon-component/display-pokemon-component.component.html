@@ -1,0 +1,13 @@
+<span >Pokémon choisi: </span >
+    id : {{detail.id}}<br>
+    name : {{detail.name}}<br>
+    height : {{detail.height}}<br>
+    weight : {{detail.weight}}<br>
+    order : {{detail.order}}<br>
+    <li *ngFor="let s of detail.stats" [ngValue]="s">
+        
+        base_stat : {{s.base_stat}}<br>
+        effort : {{s.effort}}<br>
+        stat name : {{s.stat.name}}<br>
+        stat url : {{s.stat.url}}<br>
+    </li>
